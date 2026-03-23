@@ -1,22 +1,10 @@
 {
   "domain": "zha",
   "name": "Zigbee Home Automation BLZ",
-  "after_dependencies": [
-    "hassio",
-    "onboarding",
-    "usb"
-  ],
-  "codeowners": [
-    "@dmulcahey",
-    "@adminiuga",
-    "@puddly",
-    "@TheJulianJES"
-  ],
+  "after_dependencies": ["hassio", "onboarding", "usb"],
+  "codeowners": ["@dmulcahey", "@adminiuga", "@puddly", "@TheJulianJES"],
   "config_flow": true,
-  "dependencies": [
-    "file_upload",
-    "homeassistant_hardware"
-  ],
+  "dependencies": ["file_upload", "homeassistant_hardware"],
   "documentation": "https://www.home-assistant.io/integrations/zha",
   "integration_type": "hub",
   "iot_class": "local_polling",
@@ -38,127 +26,97 @@
   ],
   "requirements": [
     "zha @ git+https://github.com/bouffalolab/zha.git@feat/blz",
-    "zigpy-blz>=0.1.0"
+    "zigpy-blz @ git+https://github.com/bouffalolab/zigpy-blz.git@main"
   ],
-  "version": "2026.3.1-blz.20260318.1",
+  "version": "2026.3.3-blz.20260323.1",
   "usb": [
     {
       "description": "*2652*",
-      "known_devices": [
-        "slae.sh cc2652rb stick"
-      ],
+      "known_devices": ["slae.sh cc2652rb stick"],
       "pid": "EA60",
       "vid": "10C4"
     },
     {
       "description": "*slzb-07*",
-      "known_devices": [
-        "smlight slzb-07"
-      ],
+      "known_devices": ["smlight slzb-07"],
       "pid": "EA60",
       "vid": "10C4"
     },
     {
       "description": "*sonoff*plus*",
-      "known_devices": [
-        "sonoff zigbee dongle plus v2"
-      ],
+      "known_devices": ["sonoff zigbee dongle plus v2"],
       "pid": "55D4",
       "vid": "1A86"
     },
     {
       "description": "*sonoff*plus*",
-      "known_devices": [
-        "sonoff zigbee dongle plus"
-      ],
+      "known_devices": ["sonoff zigbee dongle plus"],
       "pid": "EA60",
       "vid": "10C4"
     },
     {
       "description": "*tubeszb*",
-      "known_devices": [
-        "TubesZB Coordinator"
-      ],
+      "known_devices": ["TubesZB Coordinator"],
       "pid": "EA60",
       "vid": "10C4"
     },
     {
       "description": "*tubeszb*",
-      "known_devices": [
-        "TubesZB Coordinator"
-      ],
+      "known_devices": ["TubesZB Coordinator"],
       "pid": "7523",
       "vid": "1A86"
     },
     {
       "description": "*zigstar*",
-      "known_devices": [
-        "ZigStar Coordinators"
-      ],
+      "known_devices": ["ZigStar Coordinators"],
       "pid": "7523",
       "vid": "1A86"
     },
     {
       "description": "*conbee*",
-      "known_devices": [
-        "Conbee II"
-      ],
+      "known_devices": ["Conbee II"],
       "pid": "0030",
       "vid": "1CF1"
     },
     {
       "description": "*conbee*",
-      "known_devices": [
-        "Conbee III"
-      ],
+      "known_devices": ["Conbee III"],
       "pid": "6015",
       "vid": "0403"
     },
     {
       "description": "*zigbee*",
-      "known_devices": [
-        "Nortek HUSBZB-1"
-      ],
+      "known_devices": ["Nortek HUSBZB-1"],
       "pid": "8A2A",
       "vid": "10C4"
     },
     {
       "description": "*zigate*",
-      "known_devices": [
-        "ZiGate+"
-      ],
+      "known_devices": ["ZiGate+"],
       "pid": "6015",
       "vid": "0403"
     },
     {
       "description": "*zigate*",
-      "known_devices": [
-        "ZiGate"
-      ],
+      "known_devices": ["ZiGate"],
       "pid": "EA60",
       "vid": "10C4"
     },
     {
       "description": "*bv 2010/10*",
-      "known_devices": [
-        "Bitron Video AV2010/10"
-      ],
+      "known_devices": ["Bitron Video AV2010/10"],
       "pid": "8B34",
       "vid": "10C4"
     },
     {
       "description": "*sonoff*max*",
-      "known_devices": [
-        "SONOFF Dongle Max MG24"
-      ],
+      "known_devices": ["SONOFF Dongle Max MG24"],
       "pid": "EA60",
       "vid": "10C4"
     },
     {
       "description": "*sonoff*lite*mg21*",
-      "known_devices": [
-        "sonoff zigbee dongle lite mg21"
-      ],
+      "known_devices": ["sonoff zigbee dongle lite mg21"],
       "pid": "EA60",
       "vid": "10C4"
     }
