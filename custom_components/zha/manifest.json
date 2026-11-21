@@ -2,9 +2,11 @@
   "domain": "zha",
   "name": "Zigbee Home Automation BLZ",
   "after_dependencies": ["hassio", "onboarding"],
+  "categories": ["hubs_protocols.wireless_protocols"],
   "codeowners": ["@dmulcahey", "@adminiuga", "@puddly", "@TheJulianJES"],
   "config_flow": true,
-  "homeassistant": "2026.9.0",
+  "homeassistant": "2026.11.0",
+  "connectivity": ["zigbee"],
   "dependencies": ["file_upload", "homeassistant_hardware", "usb"],
   "documentation": "https://www.home-assistant.io/integrations/zha",
   "integration_type": "hub",
@@ -26,10 +28,10 @@
     "zigpy_blz"
   ],
   "requirements": [
-    "zha @ git+https://github.com/bouffalolab/zha.git@feat/blz",
+    "zha @ git+https://github.com/bouffalolab/zha.git@feat/blz-2.4.3",
     "zigpy-blz>=0.1.0"
   ],
-  "version": "2026.9.2-blz.20260915.1",
+  "version": "2026.11.2-blz.20261120.1",
   "usb": [
     {
       "description": "*2652*",

@@ -91,7 +91,7 @@ if 'zigpy_blz' not in content:
 # 3. Replace requirements line
 content = re.sub(
     r'\"requirements\": \[.*?\]',
-    '\"requirements\": [\n    \"zha @ git+https://github.com/bouffalolab/zha.git@feat/blz\",\n    \"zigpy-blz>=0.1.0\"\n  ]',
+    '\"requirements\": [\n    \"zha @ git+https://github.com/bouffalolab/zha.git@feat/blz-2.4.3\",\n    \"zigpy-blz>=0.1.0\"\n  ]',
     content,
     flags=re.DOTALL,
 )
