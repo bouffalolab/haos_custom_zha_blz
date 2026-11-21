@@ -19,6 +19,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ZHA_DIR="$SCRIPT_DIR/custom_components/zha"
 BLZ_RELEASE_DATE="${BLZ_RELEASE_DATE:-$(date -u +%Y%m%d)}"
 BLZ_RELEASE_REVISION="${BLZ_RELEASE_REVISION:-1}"
+# Library refs the generated manifest pins (branch, tag or commit)
+ZHA_REF="${ZHA_REF:-feat/blz-2.4.3}"
+ZIGPY_BLZ_REF="${ZIGPY_BLZ_REF:-main}"
 
 if [ $# -lt 1 ]; then
     echo "Usage: $0 /path/to/ha-core [tag-or-ref]"
@@ -91,7 +94,7 @@ if 'zigpy_blz' not in content:
 # 3. Replace requirements line
 content = re.sub(
     r'\"requirements\": \[.*?\]',
-    '\"requirements\": [\n    \"zha @ git+https://github.com/bouffalolab/zha.git@feat/blz-2.4.3\",\n    \"zigpy-blz>=0.1.0\"\n  ]',
+    '\"requirements\": [\n    \"zha @ git+https://github.com/bouffalolab/zha.git@' + sys.argv[4] + '\",\n    \"zigpy-blz @ git+https://github.com/bouffalolab/zigpy-blz.git@' + sys.argv[5] + '\"\n  ]',
     content,
     flags=re.DOTALL,
 )
@@ -121,7 +124,7 @@ else:
         content,
     )
 with open(sys.argv[1], 'w') as f: f.write(content)
-" "$ZHA_DIR/manifest.json" "$BLZ_VERSION" "$HA_VERSION"
+" "$ZHA_DIR/manifest.json" "$BLZ_VERSION" "$HA_VERSION" "$ZHA_REF" "$ZIGPY_BLZ_REF"
 echo "  Done."
 
 # Step 3: Patch radio_manager.py - add RadioType.blz to RECOMMENDED_RADIOS
