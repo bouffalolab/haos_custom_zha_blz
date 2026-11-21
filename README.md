@@ -4,6 +4,18 @@ This is a custom ZHA integration for Home Assistant that adds support for Bouffa
 
 It is a drop-in replacement for the built-in ZHA -- all standard ZHA features and devices continue to work. The only addition is the BLZ radio type powered by the [zigpy-blz](https://github.com/bouffalolab/zigpy-blz) library.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bouffalolab/haos_custom_zha_blz/main/docs/images/dongle.jpg" width="300" alt="ThirdReality Zigbee 3.0 USB dongle">
+</p>
+
+## How it works
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bouffalolab/haos_custom_zha_blz/main/docs/images/architecture.svg" width="480" alt="Home Assistant → custom ZHA integration (this repository) → zha + zigpy → zigpy-blz → USB serial → BL702/BL706 dongle → Zigbee devices">
+</p>
+
+This repository replaces only the ZHA integration layer. zigpy-blz talks to the dongle over USB serial; when ZHA asks for the serial port, pick the dongle's `/dev/serial/by-id/...` path.
+
 ## Repository
 
 - Source: [bouffalolab/haos\_custom\_zha\_blz](https://github.com/bouffalolab/haos_custom_zha_blz)
